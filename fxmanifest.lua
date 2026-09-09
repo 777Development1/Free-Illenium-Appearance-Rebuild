@@ -1,0 +1,116 @@
+fx_version "cerulean"
+game { "gta5" }
+
+author '777 Development & iLLeniumStudios'
+description '777 Development re-build illenium appearance v1'
+repository 'https://github.com/pedr0fontoura/fivem-appearance'
+version '5.7.0'
+
+lua54 'yes'
+
+shared_scripts {
+    '@ox_lib/init.lua',
+    'locales/locales.lua',
+    'locales/en.lua',
+    'locales/ar.lua',
+    'locales/bg.lua',
+    'locales/cs.lua',
+    'locales/de.lua',
+    'locales/es-ES.lua',
+    'locales/fr.lua',
+    'locales/hu.lua',
+    'locales/id.lua',
+    'locales/it.lua',
+    'locales/nl.lua',
+    'locales/pt-BR.lua',
+    'locales/ro-RO.lua',
+    'locales/zh-CN.lua',
+    'locales/zh-TW.lua',
+    'shared/config.lua',
+    'shared/framework/framework.lua',
+    'shared/framework/**/util.lua',
+    'shared/peds.lua',
+    'shared/tattoos.lua',
+    'shared/blacklist.lua',
+    'shared/theme.lua'
+}
+
+client_scripts {
+    -- Game scripts must load first (defines 'client' global table)
+    'game/constants.lua',
+    'game/util.lua',
+    'game/customization.lua',
+    'game/nui.lua',
+    -- Framework scripts
+    'client/framework/framework.lua',
+    'client/framework/**/main.lua',
+    'client/framework/**/compatibility.lua',
+    'client/framework/**/migrate.lua',
+    -- Client scripts
+    'client/common.lua',
+    'client/defaults.lua',
+    'client/client.lua',
+    'client/blips.lua',
+    'client/zones.lua',
+    'client/outfits.lua',
+    'client/props.lua',
+    'client/clothingtoggle.lua',
+    'client/stats.lua',
+    'client/target/target.lua',
+    'client/target/*.lua',
+    'client/dropclothing.lua', -- needs the Target abstraction above to already be loaded
+    'client/radial/radial.lua',
+    'client/radial/*.lua',
+    'client/management/management.lua',
+    'client/management/*.lua'
+}
+
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'server/database/database.lua',
+    'server/database/*.lua',
+    'server/framework/**/main.lua',
+    'server/framework/**/callbacks.lua',
+    'server/framework/**/management.lua',
+    'server/framework/**/migrate.lua',
+    'server/util.lua',
+    'server/permissions.lua',
+    'server/server.lua',
+    'server/dropclothing.lua'
+}
+
+escrow_ignore {
+	"shared/**/*.lua",
+	"locales/**/*.lua",
+	"modules/utility/server/**/*.lua",
+	"modules/utility/shared/**/*.lua",
+	"game/bridge.lua",
+	"game/util.lua",
+	"game/constants.lua",
+	"client/framework/**/*.lua",
+	"client/management/**/*.lua",
+	"client/radial/**/*.lua",
+	"client/target/**/*.lua",
+	"client/blips.lua",
+	"client/client.lua",
+	"client/common.lua",
+	"client/defaults.lua",
+	"client/outfits.lua",
+	"client/props.lua",
+	"client/stats.lua",
+	"client/zones.lua",
+	"server/database/**/*.lua",
+	"server/framework/**/*.lua",
+	"server/permissions.lua",
+	"server/server.lua",
+	"server/util.lua",
+}
+
+files {
+    'web/dist/index.html',
+    'web/dist/assets/*.js',
+    'web/dist/assets/*.css',
+    'web/dist/assets/*.ttf'
+}
+
+ui_page 'web/dist/index.html'
